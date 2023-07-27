@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nyskoop"
+dynamic = ["version"]
+authors = [
+    {name = "Giacomo Meanti"},
+]
+description = "PyTorch-based implementation of kernel estimators for learning the Koopman operator with Nystroem approximation."
+readme = "README.md"
+requires-python = ">= 3.8"
+keywords = ["machine-learning", "dynamical systems", "kernels", "Nystroem"]
+license = {text = "MIT"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "numpy",
+  "scipy",
+  "scikit-learn",
+  "torch",
+  "falkon",
+]
+
+[project.optional-dependencies]
+md = [
+    "mdtraj",
+    "nglview",
+]
+notebooks = [
+    "jupyter",
+    "tqdm",
+    "matplotlib",
+    "pandas",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "nyskoop.__version__"}
