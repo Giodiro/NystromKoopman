@@ -41,6 +41,7 @@ notebooks = [
     "tqdm",
     "matplotlib",
     "pandas",
+    "kooplearn",
 ]
 
 [tool.setuptools.dynamic]

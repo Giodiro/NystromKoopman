@@ -71,8 +71,10 @@ def train_nystrom_est(X, Y, M, kernel, kind="krr", **kind_kwargs):
     if isinstance(Y, np.ndarray):
         Y = torch.from_numpy(Y)
     cs = UniformSelector(random_gen=torch.randint(0, 1000, (1,)).item(), num_centers=M)
+    # Choose centers for X, Y differently
     # cs_x = cs.select(X.contiguous(), None)
     # cs_y = cs.select(Y.contiguous(), None)
+    # Choose the same centers for X, Y
     cs_x, cs_y = cs.select(X.contiguous(), Y.contiguous())
     cs_fixed = FixedSelector(cs_x.contiguous(), cs_y.contiguous())
     if kind == "krr":

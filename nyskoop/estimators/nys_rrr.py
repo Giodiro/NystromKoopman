@@ -56,6 +56,11 @@ class ExactKoopmanNystromRrr(BaseNystromKoopmanEstimator):
                 k_ymminv_kymn_xnm = torch.linalg.lstsq(id_regularize(ky_mm, eps), k_ymn_xnm).solution
                 kxyx = k_ymn_xnm.T @ k_ymminv_kymn_xnm
 
+            # TODO: This regularization tends to fix instability in the EVD later
+            #       i.e. warnings on the projector not being real. We should expose
+            #       the parameter to the class constructor so that users can fix the warning
+            #       on their dataset. For now multiply eps by number of points.
+            kx_mm = id_regularize(kx_mm, 1e-3)#self.kernel.params.cg_epsilon(X.dtype) * X.shape[0])
             # k_mn^x k_nm^x + n \lambda k_mm^x
             gkx = kx_nm.T @ kx_nm + penalty * kx_mm
 
