@@ -19,7 +19,7 @@ from nyskoop.estimators import (
 __all__ = [
     "train_nystrom_est", "train_kaf_est", "train_full_est", "train_est",
     "set_matplotlib_rc", "gen_lagged", "nrmse", "rmse",
-    "calc_lagged_num_steps", "IBM_COLORS",
+    "calc_lagged_num_steps", "IBM_COLORS", "implied_timescales",
 ]
 
 
@@ -200,3 +200,7 @@ def set_matplotlib_rc(small_size=14, medium_size=16, bigger_size=18):
     plt.rc('legend', fontsize=small_size)  # legend fontsize
     plt.rc('figure', titlesize=bigger_size)  # fontsize of the figure title
     plt.rc('text', usetex=True)
+
+
+def implied_timescales(evals, tau):
+    return -tau / torch.log(evals)
