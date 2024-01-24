@@ -9,12 +9,20 @@ Implementing all the algorithms and estimators (the Nystrom versions of KRR, PCR
 described in the paper. 
 
 
-
 ## Installing
 
 The code depends on [falkon](https://github.com/falkonml/falkon) and [keops](https://github.com/getkeops/keops) 
 for kernel functions and fast kernel-vector products. 
 [PyTorch](https://pytorch.org) and [numpy](https://numpy.org) are also used for their tensor implementations and linear algebra routines.
+
+To install this package, first update pip and setuptools
+```
+pip install -U pip setuptools
+```
+then run pip install with the `--no-build-isolation` flag (otherwise pip will create a mess with pytorch versions):
+```
+pip install --no-build-isolation git+https://github.com/Giodiro/NystromKoopman.git
+```
 
 ## API
 

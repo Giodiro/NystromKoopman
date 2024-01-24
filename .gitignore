@@ -8,3 +8,6 @@ notebooks/old_unused/
 analysis_outputs/
 **/.ipynb_checkpoints
 *.pyc
+
+build/
+*.egg-info/
