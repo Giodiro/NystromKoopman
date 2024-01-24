@@ -4,7 +4,7 @@ Kernel estimators for the Koopman operator with the Nystrom approximation.
 
 This repository contains code to go along the following paper:
 [G. Meanti*, A. Chatalic*,  V. R. Kostic, P. Novelli, M. Pontil, L. Rosasco, Estimating Koopman operators with sketching to
-provably learn large scale dynamical systems, Preprint, 2023.](https://arxiv.org/abs/2306.04520) 
+provably learn large scale dynamical systems, Conference on Neural Information Processing Systems, 2023.](https://arxiv.org/abs/2306.04520) 
 Implementing all the algorithms and estimators (the Nystrom versions of KRR, PCR and RRR) 
 described in the paper. 
 
@@ -53,11 +53,10 @@ to scale to large datasets.
 
 If you find this work useful, please cite the following paper:
 ```
-@misc{
+@inproceedings{nyskoop23,
     title = {Estimating {Koopman} operators with sketching to provably learn large scale dynamical systems},
     author = {Giacomo Meanti and Antoine Chatalic and Vladimir R. Kostic and Pietro Novelli and Massimiliano Pontil and Lorenzo Rosasco},
     year = {2023},
-    eprint = {2306.04520},
-    archivePrefix = {arxiv},
+    booktitle = {NeurIPS 2023}
 }
 ```
